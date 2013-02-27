@@ -14,13 +14,4 @@ Usage = python.exe LimitTask.py <nom_du_process.exe> <tps max d'utilisation> <ab
 
 from distutils.core import setup
 import py2exe
-
-setup(
-      options = {"py2exe": {
-                            "compressed": 1,
-                             "bundle_files": 1,
-                             #'dll_excludes': [ "mswsock.dll", "powrprof.dll" ] #need it (cf http://stackoverflow.com/questions/2104611/memoryloaderror-when-trying-to-run-py2exe-application)
-                             } },
-      windows=['LimitTask.pyw'] #mettre console pour voir les fenetres python
-       
-      )
+setup(windows=['LimitTask.py'], options = {"py2exe": {"compressed": 1, "bundle_files": 1, } }) #mettre "console=" au lieu de "windows=" pour voir les fenetres python
